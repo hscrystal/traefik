@@ -1,0 +1,13 @@
+[http]
+
+  [http.routers]
+    [http.routers.router0]
+      rule = "Host(`home.hs-network.info`)"
+      service = "hassio"
+
+  # Add the service
+  [http.services]
+    [http.services.hassio]
+      [http.services.hassio.loadBalancer]
+        [[http.services.hassio.loadBalancer.servers]]
+          url = "http://192.168.10.200:8123/"

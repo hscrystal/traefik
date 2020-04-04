@@ -1,5 +1,5 @@
 [http]
-
+  # Add the router
   [http.routers]
     [http.routers.router0]
       entryPoints = ["websecure"]

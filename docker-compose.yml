@@ -21,7 +21,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./traefik.toml:/traefik.toml"
       - "./acme.json:/acme.json"
-#      - "./rules:/rules"
+      - "./rules:/rules"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=Host(`traefik.hs-network.info`)"

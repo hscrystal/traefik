@@ -2,6 +2,7 @@
 
   [http.routers]
     [http.routers.router0]
+      entryPoints = ["websecure"]
       rule = "Host(`home.hs-network.info`)"
       service = "hassio"
 

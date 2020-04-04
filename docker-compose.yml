@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   traefik:
-    image: "traefik:v2.0"
+    image: "traefik:v2.2"
     container_name: "traefik"
     command:
 #      #- "--log.level=DEBUG"
@@ -25,11 +25,10 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=Host(`traefik.hs-network.info`)"
-      - "traefik.http.routers.api.entrypoints=websecure"
       - "traefik.http.routers.api.service=api@internal"
-      - "traefik.http.routers.api.middlewares=myAuth"
-      - "traefik.http.routers.api.tls"
-      - "traefik.http.middlewares.myAuth.basicauth.users=admin:$apr1$nlkHuJ.y$vQTnEvaV2md.D3GtaR5dh." #Sany12345
+      - "traefik.http.routers.api.entrypoints=websecure"
+      - "traefik.http.routers.api.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=admin:$$apr1$$p4i5v7Q.$$GU9lv7mn7cW56.ob0eCsw."
 
 networks:
   web-gateway:

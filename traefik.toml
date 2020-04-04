@@ -23,6 +23,6 @@ format = "json"
 [providers]
   [docker]
     endpoint = "unix:///var/run/docker.sock"
-    exposedByDefault: false
+    exposedByDefault = false
   [file]
     directory: /rule/
